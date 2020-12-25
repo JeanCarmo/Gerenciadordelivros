@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/general.html :: headerfiles (title = 'Listagem de livros')">
+</head>
+<body>
+
+<header th:replace="fragments/general.html :: header"> 
+</header>
+
+<div class="container my-3">
+
+       <h1 class="display-4 text-center my-3">Lista de Livros</h1>
+       <table class="table table-striped text-ceter">
+       <thead>
+       <tr>
+       <th scope="col">ID</th>
+       <th scope="col">Titulo</th>
+       <th scope="col">Descricao</th>
+       <th scope="col">Referencia</th>
+        <th scope="col">Cadastro</th>
+        <th scope="col">Funcionalidades</th>
+       </tr>
+        </thead>
+        
+        <tbody>
+        
+        <tr th:each="prod : ${livro}">
+          <th scope="row" th:text="${prod.id}"></th>
+          <th th:text="${prod.titulo}"></th>
+          <th th:text="${prod.descricao}"></th>
+            <th th:text="${prod.referencia}"></th>
+              <th th:text="${#dates.format(prod.cadastro, 'dd/MM/yyyy') }"></th>
+              <th>
+              <a class="btn btn-outline-primary"
+                th:href="@{/livro/details/{id}(id = ${prod.id})}">
+                <i class="fa fa-search"></i> 
+                </a>
+                
+                <a class="btn btn-outline-success"
+                th:href="@{/livro/save/{id}(id = ${prod.id})}">
+                <i class="fa fa-pencil"></i>
+                
+                </a>
+                
+                <a class="btn btn-outline-danger"
+                th:href="@{/livro/delete/{id}(id = ${prod.id})}">
+                <i class="fa fa-trash-o"></i>
+                
+                </a>
+                
+              </th>
+        </tr>
+        </tbody>
+       </table>
+</div>
+
+
+<footer th:replace="fragments/general.html :: footer"> 
+</footer>
+
+
+</body>
+</html>

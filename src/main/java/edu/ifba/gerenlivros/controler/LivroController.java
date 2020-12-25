@@ -19,6 +19,7 @@ public class LivroController {
 	@Autowired
 	private LivrosService service;
 	
+	
 	@GetMapping("/livro/list")
 	public String findAll(Model model) {
 		model.addAttribute("livro", service.findall());
@@ -28,7 +29,7 @@ public class LivroController {
 	@GetMapping("/livro/delete/{id}") 
 	public String delete(@PathVariable(name = "id" ) Integer id) {
 		service.delete(id);
-		return "redirection: /livro/list";
+		return "redirect:/livro/list";
 	}
 	
 	
@@ -42,7 +43,7 @@ public class LivroController {
 	}
 	
 	
-	@GetMapping ({"livro/save/{id}", "livro/save" }) 
+	@GetMapping ({"livro/save/{id}", "/livro/save"}) 
 	public String LoadRegistrationform(@PathVariable(required = false) Integer id, Model model) {
 		Livros p;
 		String mode;
@@ -66,7 +67,7 @@ public class LivroController {
 	public String save(@ModelAttribute Livros p) {
 		p.setCadastro(new Date());
 		service.save(p);
-		return "livro/registration-form";
+		return "redirect:/livro/list";
 		
 	}
 	

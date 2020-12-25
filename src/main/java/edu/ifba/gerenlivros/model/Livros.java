@@ -39,6 +39,4 @@ public class Livros {
 	@Column(name = "cadastro")
 	private Date cadastro;
 	
-	
-
 }

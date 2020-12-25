@@ -12,9 +12,3 @@ id INTEGER PRIMARY KEY AUTO_INCREMENT,
 
 INSERT INTO livros(titulo, descricao, referencia, cadastro)
 VALUES ('PS. EU TE AMO', 'filme de romance', 'Romance', CURRENT_DATE());
-	
-INSERT INTO livros(titulo, descricao, referencia, cadastro)
-VALUES ('PE EU TE AMO', 'filme de romance', 'Romance', CURRENT_DATE());
-
-INSERT INTO livros(titulo, descricao, referencia, cadastro)
-VALUES ('P', 'filme de romance', 'Romance', CURRENT_DATE());

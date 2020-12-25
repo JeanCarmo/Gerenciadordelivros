@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/general.html :: headerfiles (title = 'Inic�o')">
+</head>
+<body>
+
+<header th:replace="fragments/general.html :: header"> 
+</header>
+
+<div class="container my-3">
+    <div class="jumbotron">
+       <h1 class="display-4">Seja bem vindo ao sistema de Gerenciamento de Livros</h1>
+       <p class="lead">Esse é o sistema de Gerenciamento de Livros</p>
+       <hr class="my-4">
+       <p>Faça Login para usar o Sistema</p>
+       <p class="lead">
+       <a class="btn btn-primary btn-lg" href="#" role="button">Login</a>
+    </div>
+</div>
+
+
+<footer th:replace="fragments/general.html :: footer"> 
+</footer>
+
+
+</body>
+</html>
